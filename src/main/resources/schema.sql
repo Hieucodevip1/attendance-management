@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `attendances` (
     `notes` TEXT NULL,
     CONSTRAINT `fk_attendance_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
     CONSTRAINT `uk_attendance_user_date` UNIQUE (`user_id`, `work_date`),
-    CONSTRAINT `chk_attendance_status` CHECK (`status` IN ('PRESENT', 'LATE', 'EARLY_LEAVE', 'ABSENT'))
+    CONSTRAINT `chk_attendance_status` CHECK (`status` IN ('PRESENT', 'LATE', 'EARLY_LEAVE', 'ABSENT', 'ON_LEAVE'))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 3. Bảng leave_requests (Đơn yêu cầu nghỉ phép)
